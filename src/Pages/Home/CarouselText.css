@@ -1,0 +1,29 @@
+.carousel-inner{
+    height: 350px;
+    /* display: flex;
+    align-items: center; */
+}
+.carousel-item{
+   margin-top: 50px; 
+   
+}
+.carousel-control-next, .carousel-control-prev{
+    display: none;
+}  
+
+.carousel-caption{
+    position: static;
+}
+
+.main-text{
+    font-size: 20px;
+    position: relative;
+    top: 20px;
+    bottom: 70px;
+    left: 40px;
+    width: 80%;
+    text-align: center;
+    color: #eee;
+    
+}
+

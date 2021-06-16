@@ -1,0 +1,54 @@
+.order-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start;
+    padding: 10px 0 100px 0;
+}
+
+.order-header{
+    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(../../images/bg-4.jpg) fixed no-repeat;
+    background-size: cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #eee;
+}
+
+.order-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: flex-start;
+    margin-left: 10px;
+    padding: 10px;
+    border: 2px solid blue;
+}
+
+.order-form input, .order-form button{
+    padding: 5px;
+    margin: 5px 0 10px 10px;
+}
+
+.order-form label{
+    margin-left: 10px;
+}
+
+.order-form textarea{
+    padding: 5px;
+    margin: 5px 0 0 10px;
+}
+
+.order-form small{
+    margin: 0 0 10px 5px;
+}
+
+.weight-quotes{
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.weight-quotes p{
+    border-left: 3px solid #534186;
+    padding-left: 10px;
+}

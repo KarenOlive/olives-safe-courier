@@ -1,0 +1,50 @@
+
+
+.top-header{
+    background-image: url(../../images/bg-1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    
+}
+
+.top-header button{
+    align-self: center;
+    padding: 10px;
+    background-color: #614E9B;
+    color: #eee;
+    border: 1px solid #614E9B;
+
+
+}
+
+.top-header p{
+    align-self: center;
+    font-weight: 600;
+    font-size: 35px;
+    text-shadow: 3px 3px 3px #eee;
+    text-transform: capitalize;
+}
+
+.first-section{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 250px;
+    box-shadow: 12px 12px 12px #46424283;
+}
+
+.testimonials{
+    background-color: #2c1769b6;
+    background-blend-mode: soft-light;
+    background-blend-mode: darken;
+    height: 500px;
+    max-height: fit-content;
+    padding-top: 40px;
+    padding: 10px;
+}
+

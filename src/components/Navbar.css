@@ -1,0 +1,37 @@
+nav{
+    background-color: #534186;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+    color: #fff;
+}
+
+.nav-logo{
+    border: 2px solid rgb(18, 3, 31);
+    align-self: center;
+    padding: 10px;
+    font-family: 'Tangerine', serif;
+    font-size: 48px;
+    text-shadow: 4px 3px 3px #000;
+
+}
+
+.nav-links{
+    border: 2px solid red;
+    list-style-type: none;
+    display: flex;
+    max-width: fit-content;
+    flex-wrap: wrap;
+    
+}
+
+.nav-links li{
+    padding: 10px;
+    margin: 10px;
+    font-size: 20px;
+}
+.nav-links a{
+    text-decoration: none;
+    color: #fff;
+}
