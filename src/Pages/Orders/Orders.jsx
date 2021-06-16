@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer'
-import { FormControl, Form, FormGroup, FormLabel } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 
 import './Orders.css';
 
