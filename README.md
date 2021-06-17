@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+View the site here https://safe-courier.netlify.app
 
 ## Available Scripts
 
