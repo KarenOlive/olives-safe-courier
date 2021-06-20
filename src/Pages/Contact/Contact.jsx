@@ -18,7 +18,7 @@ export default function Contact() {
             <h2>REQUEST A CALLBACK</h2>
             <div className="contact">
                 
-                <form style={{border:"2px solid blue"}}>
+                <form>
                         {/* <label>Name</label> */}
                         <input type="text" placeholder="Your full name" required />
                         {/* <label>Email</label> */}
@@ -30,7 +30,7 @@ export default function Contact() {
                         <button type="submit">Submit</button>
 
                 </form>
-                <div className="contact-info" style={{border:"2px solid blue"}}>
+                <div className="contact-info" >
                     <h3>Address</h3>
                     <address>
                     203 Fake St. Mountain View, San Francisco, California, USA

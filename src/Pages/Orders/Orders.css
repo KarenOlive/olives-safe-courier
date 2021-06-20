@@ -22,7 +22,6 @@
     align-items: flex-start;
     margin-left: 10px;
     padding: 10px;
-    border: 2px solid blue;
 }
 
 .order-form input, .order-form button{

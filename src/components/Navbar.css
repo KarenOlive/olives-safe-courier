@@ -8,7 +8,6 @@ nav{
 }
 
 .nav-logo{
-    border: 2px solid rgb(18, 3, 31);
     align-self: center;
     padding: 10px;
     font-family: 'Tangerine', serif;
@@ -18,7 +17,6 @@ nav{
 }
 
 .nav-links{
-    border: 2px solid red;
     list-style-type: none;
     display: flex;
     max-width: fit-content;

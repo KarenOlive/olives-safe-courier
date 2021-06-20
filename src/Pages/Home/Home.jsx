@@ -15,9 +15,9 @@ export default function Home() {
             <Navbar/>
 
             <div className="top-header">
-                <p>The world’s most trusted and reliable courier company.</p>
+                <p>The world’s most trusted and reliable courier company. Sign up to get started</p>
 
-                <button type="button"><Link to="/signup">GET STARTED</Link></button>
+                <button type="button"><Link to="/signup" style={{textDecoration: "none", color:"#eee"}}>GET STARTED</Link></button>
             </div>
 
             <div className="first-section">
