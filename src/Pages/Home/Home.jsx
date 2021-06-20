@@ -24,8 +24,9 @@ export default function Home() {
                 <img src={image1} alt="icon"/>
                 <p>Over 3000+ orders delivered across the country.</p>
             </div>
-
             <div id="testimonials" className="testimonials">
+            <center><h3>TESTIMONIALS</h3></center>
+
                 <CarouselText/>
 
             </div>
