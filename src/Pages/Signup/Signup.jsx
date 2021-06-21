@@ -53,7 +53,7 @@ export default function Signup() {
                         <label>Password</label>
                         <input type="password" required value={Password} onChange={(e)=>{setPassword(e.target.value)}} />
 
-                      <Link to="/login"><button type="submit">Register</button></Link>  
+                      <button type="submit">Register</button>
 
                     </form>
 

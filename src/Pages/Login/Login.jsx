@@ -48,7 +48,7 @@ export default function Login() {
                         <label>Password</label>
                         <input type="password" required value={Password} onChange={(e)=>{setPassword(e.target.value)} }/>
 
-                        <Link to="/orders"><button type="submit">Login</button></Link>   
+                        <button type="submit">Login</button>
 
                     </form>
                     <p>Don't have an account? <Link to="/signup">Signup</Link></p>

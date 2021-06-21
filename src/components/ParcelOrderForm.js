@@ -4,7 +4,6 @@ import Axios from 'axios'
 
 export default function ParcelOrderForm() {
 
-    const url = "https://safe-courier-server-api.herokuapp.com/parcels";
 
     const [RecipientsName, setRecipientsName] = useState('');
     const [Contact, setContact] = useState('');
@@ -13,21 +12,27 @@ export default function ParcelOrderForm() {
     const [City, setCity] = useState('');
     const [Order, setOrder] = useState('');
 
-        const [parcel, setParcel] = useState({RecipientsName: '', Contact: '', pickupLocation: '', Destination: '', City: '', Order: ''})
-        const newParcelOrder = {
-                        RecipientsName: parcel.RecipientsName, Contact: parcel.Contact, pickupLocation: parcel.pickupLocation,
-                         Destination: parcel.Destination, City: parcel.City, Order: parcel.Order
-        }
-
 
             const handleSubmit = (e)=>{
 
                 e.preventDefault()
 
-                Axios.post(url, newParcelOrder).then(response =>{
-                    console.log(response)
-                    setParcel(response)
-                });
+                const url = `https://safe-courier-server-api.herokuapp.com/parcels`
+
+                const newParcelOrder = {
+                    RecipientsName,
+                    Contact, 
+                    PickupLocation,
+                    Destination, 
+                    City, 
+                    Order
+                };
+
+                Axios.post(url, newParcelOrder)
+                .then(response =>{
+                        console.log(response)
+                }
+                ).catch((err)=> console.log(err))
 
                 
                 setRecipientsName('');
