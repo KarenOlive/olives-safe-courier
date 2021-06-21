@@ -12,7 +12,7 @@ export default function Navbar() {
                   <li><Link to="/">Home</Link></li>  
                   <li><Link to="/orders">Orders</Link></li>  
                   <li><Link to="/contact">Contact</Link></li>  
-                  <li><Link to="/"><i className="far fa-user-circle"></i></Link></li>  
+                  {/* <li><Link to="/"><i className="far fa-user-circle"></i></Link></li>   */}
 
                 </ul>
 

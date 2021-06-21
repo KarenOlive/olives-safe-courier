@@ -10,7 +10,7 @@ export default function parcelsContextProvider(props) {
    
 
     return (
-        <parcelsContext.Provider value={Order}>
+        <parcelsContext.Provider value={parcel}>
             {props.children}
         </parcelsContext.Provider>
     )

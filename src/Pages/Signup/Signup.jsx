@@ -1,31 +1,43 @@
-import React, {useState, useContext}from 'react'
+import React, {useState}from 'react'
+import Axios from 'axios'
 
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { Link } from 'react-router-dom';
-import { SignUpContext } from '../../context/SignupContext';
 import './Signup.css';
 
 
+
 export default function Signup() {
-    const {newUser} = useContext(SignUpContext)
+    const [Fullname, setFullname] = useState('')
+    const [Email, setEmail] = useState('')
+    const [Password, setPassword] = useState('')
 
-    const [fullname, setFullname] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-
+            
 
     const handleSubmit =(e)=>{
-        e.preventDefault()
 
-        newUser()
+        e.preventDefault();
+
+        const url = `https://safe-courier-server-api.herokuapp.com/auth/signup`
+
+        const newUser = {
+            Fullname,
+            Email,
+            Password
+        };
+
+        Axios.post(url, newUser)
+        .then((res)=> {
+            console.log(res)
+        }
+        ).catch((err)=> console.log(err))
+
+
+        setFullname('')
+        setEmail('')
+        setPassword('')
     }
-
-    // const newUser = {
-    //   Fullname:  userData.Fullname,
-    //   Email : userData.Email,
-    //   Password: userData.Password
-    // }
 
     return (
         <div>
@@ -35,13 +47,13 @@ export default function Signup() {
                     <div className="form-card">
                     <form method="POST" onSubmit={handleSubmit}>
                         <label>Full Name</label>
-                        <input type="text" placeholder="Enter full name" required value={fullname} onChange={(e)=>{setFullname(e.target.value)}}/>
+                        <input type="text" placeholder="Enter full name" required value={Fullname} onChange={(e)=>{setFullname(e.target.value)}}/>
                         <label>Email</label>
-                        <input type="email" placeholder="Enter Email" required value={email} onChange={(e)=>{setEmail(e.target.value)}} />
+                        <input type="email" placeholder="Enter Email" required value={Email} onChange={(e)=>{setEmail(e.target.value)}} />
                         <label>Password</label>
-                        <input type="password" required value={password} onChange={(e)=>{setPassword(e.target.value)}} />
+                        <input type="password" required value={Password} onChange={(e)=>{setPassword(e.target.value)}} />
 
-                        <button type="submit">Register</button>
+                      <Link to="/login"><button type="submit">Register</button></Link>  
 
                     </form>
 
