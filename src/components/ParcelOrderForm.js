@@ -28,7 +28,11 @@ export default function ParcelOrderForm() {
                     Order
                 };
 
-                Axios.post(url, newParcelOrder)
+                const token = sessionStorage.getItem('token')
+
+                Axios.post(url, newParcelOrder,  {headers: {
+                    'auth-token': token
+                  }})
                 .then(response =>{
                         console.log(response)
                 }

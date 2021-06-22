@@ -2,12 +2,12 @@ import React, { createContext } from 'react'
 
 const parcelOrder = {RecipientsName: '', Contact: '', PickupLocation: '', Destination: '', City: '', Order: ''}
 //creating context
-const ParcelContext = createContext(parcelOrder) 
+export const ParcelContext = createContext(parcelOrder) 
 
 //parent component
 export default function Parcels(props) {
     return (
-       <ParcelContext.Provider>
+       <ParcelContext.Provider value={{Order, Destination}}>
            {props.children}
        </ParcelContext.Provider>
     )

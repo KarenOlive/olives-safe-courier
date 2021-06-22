@@ -23,6 +23,8 @@ export default function Login() {
         Axios.post(url, userData)
         .then((res)=> {
             console.log(res)
+            sessionStorage.setItem('token', res.data.token)
+
         }
         ).catch((err)=> console.log(err))
 
