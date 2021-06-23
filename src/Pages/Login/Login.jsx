@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { useHistory } from 'react-router-dom';
 import Axios from 'axios'
 
 import Navbar from '../../components/Navbar'
@@ -8,7 +9,7 @@ import './Login.css';
 export default function Login() {
     const [Email, setEmail] = useState('')
     const [Password, setPassword] = useState('')
-
+    const history = useHistory()
 
     const handleSubmit = (e)=>{
         e.preventDefault();
@@ -24,7 +25,9 @@ export default function Login() {
         .then((res)=> {
             console.log(res)
             sessionStorage.setItem('token', res.data.token)
-
+            if(res.data.message === "Log In successful"){
+                history.push('/orders')
+            }
         }
         ).catch((err)=> console.log(err))
 

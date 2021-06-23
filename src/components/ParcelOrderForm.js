@@ -35,6 +35,7 @@ export default function ParcelOrderForm() {
                   }})
                 .then(response =>{
                         console.log(response)
+                        
                 }
                 ).catch((err)=> console.log(err))
 

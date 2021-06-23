@@ -1,4 +1,6 @@
 import React, {useState}from 'react'
+import { useHistory } from 'react-router-dom';
+
 import Axios from 'axios'
 
 import Navbar from '../../components/Navbar';
@@ -12,6 +14,8 @@ export default function Signup() {
     const [Fullname, setFullname] = useState('')
     const [Email, setEmail] = useState('')
     const [Password, setPassword] = useState('')
+
+    const history = useHistory()
 
             
 
@@ -30,6 +34,9 @@ export default function Signup() {
         Axios.post(url, newUser)
         .then((res)=> {
             console.log(res)
+            if(res.data.message === "You have successfully signed up"){
+                history.push('/login')
+            }
         }
         ).catch((err)=> console.log(err))
 

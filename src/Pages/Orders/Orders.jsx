@@ -2,13 +2,12 @@ import React from 'react'
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer'
 import ParcelOrderForm from '../../components/ParcelOrderForm';
-import { getParcels } from '../../api/parcels';
+import { getUsersParcels } from '../../api/parcels';
 import './Orders.css';
 
 export default function Orders() {
     
-    // const [parcel, setParcel] = useState()
-
+    
 
     return (
         <div>
@@ -33,7 +32,7 @@ export default function Orders() {
             <div>
                 <h3>Your Orders</h3>
                 <p></p>
-                <button onClick={getParcels}>View Parcel Orders</button>
+                <button onClick={getUsersParcels}>View Parcel Orders</button>
 
             </div>
             <Footer/>
