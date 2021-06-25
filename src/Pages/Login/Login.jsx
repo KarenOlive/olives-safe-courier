@@ -6,10 +6,17 @@ import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer';
 import { Link } from 'react-router-dom';
 import './Login.css';
+import { IsAuth } from '../../context/AuthContext';
+
+
+
+
 export default function Login() {
     const [Email, setEmail] = useState('')
     const [Password, setPassword] = useState('')
     const history = useHistory()
+    const { login } = IsAuth()
+
 
     const handleSubmit = (e)=>{
         e.preventDefault();
@@ -25,6 +32,7 @@ export default function Login() {
         .then((res)=> {
             console.log(res)
             sessionStorage.setItem('token', res.data.token)
+            login()
             if(res.data.message === "Log In successful"){
                 history.push('/orders')
             }

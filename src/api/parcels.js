@@ -1,10 +1,10 @@
 import Axios from 'axios'
 
-const auth = "https://safe-courier-server-api.herokuapp.com/auth"
+const auth = `https://safe-courier-server-api.herokuapp.com/auth`
 
-const getUserparcel = "https://safe-courier-server-api.herokuapp.com/users/:userId/parcels"
+const getUserparcel = `https://safe-courier-server-api.herokuapp.com/users/:userId/parcels`
 
-const parcelsurl = "https://safe-courier-server-api.herokuapp.com/parcels"
+const parcelsurl = `https://safe-courier-server-api.herokuapp.com/parcels`
 
 // const cancelParcelurl = "https://safe-courier-server-api.herokuapp.com/parcels/:parcelId/cancel"
 
@@ -15,13 +15,14 @@ Axios.get(auth, {headers:{
 }}).then(res =>{
     console.log(res)
     sessionStorage.setItem('userId', res.data.userId)
+    sessionStorage.setItem('Username', res.data.Fullname)
 }).catch((err)=> console.log(err))
 
 
+
+
+
 const userID = sessionStorage.getItem('userId')
-
-
-
 
 export const getUsersParcels = () => Axios.get(getUserparcel,
     {

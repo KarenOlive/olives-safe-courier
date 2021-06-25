@@ -1,9 +1,18 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
+import { Nav, NavDropdown } from 'react-bootstrap';
+import { IsAuth } from '../context/AuthContext'
 
 import './Navbar.css';
 
 export default function Navbar() {
+    const Username = sessionStorage.getItem('Username')
+    const {Auth, logout} = IsAuth()
+
+              
+    
+
+
     return (
         <div>
             <nav>
@@ -12,11 +21,23 @@ export default function Navbar() {
                   <li><Link to="/">Home</Link></li>  
                   <li><Link to="/orders">Orders</Link></li>  
                   <li><Link to="/contact">Contact</Link></li>  
-                  {/* <li><Link to="/"><i className="far fa-user-circle"></i></Link></li>   */}
-
+                  {Auth ? 
+                    <li id="nav-dropdown">
+                        <Nav>
+                            <NavDropdown title= {<i className="far fa-user-circle"></i>}>
+                                <NavDropdown.ItemText>{Username}</NavDropdown.ItemText>
+                                <NavDropdown.Divider></NavDropdown.Divider>
+                                <NavDropdown.Item onClick={logout}>Logout</NavDropdown.Item>
+                            </NavDropdown>
+                        </Nav>
+                    </li>
+                    
+                    : <li><Link to="/login">Login</Link></li>
+                    }
                 </ul>
-
+                
             </nav>
+           
         </div>
     )
 }

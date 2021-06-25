@@ -33,3 +33,8 @@ nav{
     text-decoration: none;
     color: #fff;
 }
+
+.nav-item a.dropdown-item{
+    color: #000;
+}
+

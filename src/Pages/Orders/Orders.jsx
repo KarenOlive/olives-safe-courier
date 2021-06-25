@@ -1,11 +1,13 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom';
+
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer'
 import ParcelOrderForm from '../../components/ParcelOrderForm';
 import { getUsersParcels } from '../../api/parcels';
 import './Orders.css';
 
-export default function Orders() {
+function Orders() {
     
     
 
@@ -39,3 +41,6 @@ export default function Orders() {
         </div>
     )
 }
+
+
+export default withRouter(Orders);
