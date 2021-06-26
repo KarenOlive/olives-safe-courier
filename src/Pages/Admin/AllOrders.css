@@ -1,0 +1,30 @@
+.list-header{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap
+}
+
+.list-header h3{
+    flex-basis: 20%;
+}
+
+.all-parcels{
+    background: linear-gradient(rgba(0, 0, 0, 0.562), rgb(0, 0, 0.2));
+    background-size: cover;
+    color: #eee;
+}
+
+.all-parcels hr{
+    border-top: 1px solid #ddd;
+}
+
+.all-parcels li{
+    display: flex;
+    justify-content: center;
+    flex-basis: 20%;
+}
+
+.all-parcels li p, .all-parcels li a{
+    flex-basis: 20%;
+
+}

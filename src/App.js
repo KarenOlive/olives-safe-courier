@@ -10,6 +10,9 @@ import { IsAuth } from './context/AuthContext'
 import './App.css';
 import Contact from './Pages/Contact/Contact';
 import ProtectedRoute from './components/ProtectedRoute';
+import AdminEditOrder from './Pages/Admin/AdminEditOrder'
+import AllOrders from './Pages/Admin/AllOrders';
+import EditOrder from './Pages/Orders/EditOrder';
 
 function App() {
   const {Auth} = IsAuth()
@@ -24,8 +27,9 @@ function App() {
           <Route exact path="/contact" component={Contact} />
 
           <ProtectedRoute path="/orders" component={Orders} isAuth={Auth} />  
-
-
+          <Route exact path="/adminEditOrder/:parcelId" component={AdminEditOrder} />
+          <Route exact path="/editOrder" component={EditOrder} />
+          <Route exact path="/admin" component={AllOrders} />
 
         </Switch>
       </Router>

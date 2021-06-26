@@ -11,10 +11,12 @@ export default function Footer() {
             <div className="footer-wrapper">
                 <div className="footer-icons" >
                     <h3>Connect</h3>
-                    <Link><i className="fab fa-facebook-square"></i></Link>
-                    <Link><i className="fab fa-twitter-square"></i></Link>
-                    <Link><i className="fab fa-instagram"></i></Link>
-                    <Link to="mailto:safecourier@gmail.com"><i className="fas fa-envelope-square"></i></Link>
+                    <Link to="https://www.facebook.com"><i className="fab fa-facebook-square"></i></Link>
+                    <Link to="https://www.twitter.com"><i className="fab fa-twitter-square"></i></Link>
+                    <Link to="https://www.instagram.com"><i className="fab fa-instagram"></i></Link>
+                    <Link to="mailto:safecourier@gmail.com?subject = Feedback">
+                        <i className="fas fa-envelope-square"></i>
+                    </Link>
 
                 </div>
                 <div className="footer-links" >
@@ -35,7 +37,6 @@ export default function Footer() {
                     </form>
                 </div>
             </div>
-           
             <footer>
                 <p>Copyright &copy; {copyrightYear} All Rights Reserved</p>
             </footer>

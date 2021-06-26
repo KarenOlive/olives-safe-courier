@@ -1,20 +1,20 @@
-// import React, {useContext} from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-// import { ParcelContext } from '../../context/Parcels';
 
+export default function OrderDetails({parcel, parcelId}) {
 
-// export default function OrderDetails({parcel}) {
-//     const {Order, Destination} = useContext(ParcelContext);
+    return (
+        <>
+            <li key={parcel._id} style={{display:"flex", justifyContent:"space-around", flexWrap:"wrap"}}>
+                <p>{parcel.Order}</p>
+                <p>{parcel.Destination}</p>
+                <p>{parcel.status}</p>
+                <p>{parcel.presentLocation}</p>
+                <Link to={`/editOrder/${parcelId}`}>Edit</Link>
 
-//     return (
-//         <div>
-//             <li style={{display:"flex", justifyContent:"space-around", flexWrap:"wrap"}}>
-//                 <p>{Order}</p>
-//                 <p>{Destination}</p>
-//                 <button>Change Destination</button>
-//                 <button>Cancel Order</button>
-//             </li>
-//             <hr></hr>
-//         </div>
-//     )
-// }
+            </li>
+            <hr></hr>
+        </>
+    )
+}

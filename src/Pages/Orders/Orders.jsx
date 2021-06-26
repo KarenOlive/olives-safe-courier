@@ -4,8 +4,8 @@ import { withRouter } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer'
 import ParcelOrderForm from '../../components/ParcelOrderForm';
-import { getUsersParcels } from '../../api/parcels';
 import './Orders.css';
+import OrdersList from './OrdersList';
 
 function Orders() {
     
@@ -33,8 +33,7 @@ function Orders() {
             </div>
             <div>
                 <h3>Your Orders</h3>
-                <p></p>
-                <button onClick={getUsersParcels}>View Parcel Orders</button>
+                <OrdersList/>
 
             </div>
             <Footer/>
