@@ -34,7 +34,7 @@ export default function Login() {
             sessionStorage.setItem('token', res.data.token)
             login()
             if(res.data.message === "Log In successful"){
-                history.push('/orders')
+                history.push('/orders') 
             }
         }
         ).catch((err)=> console.log(err))
@@ -64,7 +64,7 @@ export default function Login() {
                         <button type="submit">Login</button>
 
                     </form>
-                    <p>Don't have an account? <Link to="/signup">Signup</Link></p>
+                    <p>Don't have an account?   <Link to="/signup">Signup</Link></p>
                     </div>
                     
                 <Footer/>

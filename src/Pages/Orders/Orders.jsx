@@ -31,8 +31,18 @@ function Orders() {
                 <p>Liquids and fragiles - $30</p>
             </div>
             </div>
+            
+            <h3>Your Orders</h3>
+
             <div>
-                <h3>Your Orders</h3>
+            <div className="list-header">
+                <h3>Username</h3>
+                <h3>Parcel</h3>
+                <h3>Status</h3>
+                <h3>PresentLocation</h3>
+                <h3>Destination</h3>
+
+            </div>
                 <OrdersList/>
 
             </div>

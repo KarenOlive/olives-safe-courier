@@ -9,7 +9,6 @@ export function IsAuth(){
 
 export default function AuthProvider(props) {
     const [Auth, setAuth] = useState(false)
-
     const login = ()=> setAuth(true)
 
     function logout(){

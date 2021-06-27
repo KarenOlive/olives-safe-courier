@@ -28,8 +28,8 @@ function App() {
 
           <ProtectedRoute path="/orders" component={Orders} isAuth={Auth} />  
           <Route exact path="/adminEditOrder/:parcelId" component={AdminEditOrder} />
-          <Route exact path="/editOrder" component={EditOrder} />
-          <Route exact path="/admin" component={AllOrders} />
+          <Route exact path="/editOrder/:parcelId" component={EditOrder} />
+          <ProtectedRoute exact path="/admin" component={AllOrders} isAuth={Auth} />
 
         </Switch>
       </Router>

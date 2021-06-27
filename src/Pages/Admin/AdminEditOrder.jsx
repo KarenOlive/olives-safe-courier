@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import Axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 import { baseUrl } from "../../api/parcels";
-const token = sessionStorage.getItem('token')
+import Navbar from '../../components/Navbar'
+
 
 
 
 export default function AdminEditOrder() {
     const [location, setLocation] = useState("");
     const {parcelId} = useParams()
+    const token = sessionStorage.getItem('token')
+    const history = useHistory()
 
 
     const ParcelPresentLocation = {
@@ -25,6 +28,9 @@ export default function AdminEditOrder() {
         ).then(res=>{
             console.log(res)
         }).catch((err)=>console.log(err))
+
+        setLocation('')
+        history.goBack()
     }
 
     const OrderDataStatusOnroute = {
@@ -56,6 +62,8 @@ export default function AdminEditOrder() {
         ).then(res =>{
             console.log(res)
         }).catch((err)=> console.log(err))
+
+        history.goBack()
     }
 
     function statusHandlerDelivered(e) {
@@ -67,44 +75,42 @@ export default function AdminEditOrder() {
         ).then(res =>{
             console.log(res)
         }).catch((err)=> console.log(err))
+
+        history.goBack()
+
     }
 
     const cancelParcelOrder = ()=> {
 
    
-        Axios.put(baseUrl+`/${parcelId}/cancel`,
-            {
-                headers:{
-                    'auth-token': token
-                }
-            },
-            {
-                params:{
-                    'parcelId': parcelId
-                 }
-            }).then(res =>{
+        Axios.put(baseUrl+`/${parcelId}/cancel`, 
+                    config
+        ).then(res =>{
                 console.log(res)
-            }).catch((err)=> console.log(err))
+        }).catch((err)=> console.log(err))
+
+            history.goBack()
+
     }
 
     return (
         <div>
-            <form>
-                <div>
-                    <h4>Edit Parcel Order Status</h4>
-                    <button type="button" onClick={{statusHandlerInTransit}}>In-transit</button>
-                    <button type="button" onClick={{statusHandlerDelivered}}>Delivered</button>
-                    <button type="button" onClick={{cancelParcelOrder}} >Cancel Order</button>
+            <Navbar/>
+                <h4>Edit Parcel Order Status</h4>
+                <div style={{display: "flex", justifyContent:"space-around", flexWrap: "wrap"}}>
+                    
+                    <button type="button" onClick={statusHandlerInTransit}>In-transit</button>
+                    <button type="button" onClick={statusHandlerDelivered}>Delivered</button>
+                    <button type="button" onClick={cancelParcelOrder} >Cancel Order</button>
                 </div>
+            <form style={{margin:"10px", padding:"20px"}}>
                 
-                <div>
                     <input type="text" placeholder="Change Present Location" required 
                         value={location} onChange={(e)=>setLocation(e.target.value)} />
 
                     <button type="submit" onClick={presentLocation}>
                             Change location
                     </button>
-                </div>
                
             </form>
         </div>

@@ -51,7 +51,7 @@ export default function Signup() {
             <Navbar/>
                 <div>
                     <h2>Signup</h2>
-                    <div className="form-card">
+                    <div className="formcard">
                     <form method="POST" onSubmit={handleSubmit}>
                         <label>Full Name</label>
                         <input type="text" placeholder="Enter full name" required value={Fullname} onChange={(e)=>{setFullname(e.target.value)}}/>

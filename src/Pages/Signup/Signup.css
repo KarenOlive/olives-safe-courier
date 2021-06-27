@@ -1,17 +1,56 @@
-.form-card{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+.formcard{
+    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border: 1px solid #fff;
     border-radius: 3px;
     width: 50%;
+    height: 75vh;
     margin: 0 auto;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
+    background-color: #eee;
 }
 
-.form-card form{
-    padding: 2px 16px;
+h2{
+    font-family: 'Tangerine', serif;
+    text-align: center;
+    font-size: 70px;
+}
+
+.formcard form{
+    padding: 20px 16px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
     align-items: flex-start;
+}
+
+.formcard form button{
+    margin: 10px 10px 5px 0;
+    padding: 5px;
+    color: #fff;
+    font-size: 20px;
+    background-color: #534186;
+}
+
+.formcard form input{
+    border: 1px solid #ddd;
+
+    margin: 10px 10px 10px 0;
+    padding: 5px;
+}
+
+.formcard form label{
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', sans-serif, Helvetica, sans-serif;
+}
+
+ .formcard  p{
+    margin: 10px;
+    text-align: center;
+} 
+
+.formcard p a{
+    color: #8366d3;
 }

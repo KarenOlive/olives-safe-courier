@@ -27,14 +27,7 @@ export default function ParcelProvider(props) {
                 console.log(res.data.parcelOrders)
                 setParcels(res.data.parcelOrders)
             }).catch((err)=> console.log(err))
-    },[])
-
-        
-            
-        
-        
-
-
+    },[])      
 
     return (
         

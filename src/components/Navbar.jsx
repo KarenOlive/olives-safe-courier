@@ -20,6 +20,7 @@ export default function Navbar() {
                 <ul className="nav-links">
                   <li><Link to="/">Home</Link></li>  
                   <li><Link to="/orders">Orders</Link></li>  
+                  <li><Link to="/admin">Admin</Link></li>
                   <li><Link to="/contact">Contact</Link></li>  
                   {Auth ? 
                     <li id="nav-dropdown">
