@@ -35,14 +35,14 @@ function Orders() {
             <h3>Your Orders</h3>
 
             <div>
-            <div className="list-header">
-                <h3>Username</h3>
-                <h3>Parcel</h3>
-                <h3>Status</h3>
-                <h3>PresentLocation</h3>
-                <h3>Destination</h3>
+            <div className="listheader">
+                <h5>Parcel</h5>
+                <h5>Destination</h5>
+                <h5>Status</h5>
+                <h5>PresentLocation</h5>
 
             </div>
+            <hr></hr>
                 <OrdersList/>
 
             </div>

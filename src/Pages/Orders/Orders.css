@@ -29,6 +29,11 @@
     margin: 5px 0 10px 10px;
 }
 
+.order-form button{
+    background-color: #534186;
+    color: #eee;
+}
+
 .order-form label{
     margin-left: 10px;
 }
@@ -52,8 +57,13 @@
     padding-left: 10px;
 }
 
-.list-header{
+.listheader{
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+}
+
+.listheader h5{
+    flex-basis: 25%;
+    flex-shrink: 1;
 }
