@@ -15,15 +15,12 @@ export default function Contact() {
             </div>
             
             <h4 style={{paddingTop:"30px"}}>CONTACT US</h4>
-            <h2>REQUEST A CALLBACK</h2>
+            <h3>REQUEST A CALLBACK</h3>
             <div className="contact">
                 
                 <form>
-                        {/* <label>Name</label> */}
                         <input type="text" placeholder="Your full name" required />
-                        {/* <label>Email</label> */}
                         <input type="email" placeholder="Your Email" required />
-                        {/* <label>Phone</label> */}
                         <input type="text" placeholder="Your Phone number" required />
                         <input type="text" placeholder="Subject" required />
                         <textarea cols="35" rows="5" placeholder="Message"></textarea>
