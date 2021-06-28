@@ -8,9 +8,7 @@ import './Orders.css';
 import OrdersList from './OrdersList';
 
 function Orders() {
-    
-    
-
+       
     return (
         <div>
             <Navbar/>

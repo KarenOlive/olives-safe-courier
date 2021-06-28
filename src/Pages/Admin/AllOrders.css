@@ -9,9 +9,11 @@
 }
 
 .all-parcels{
-    background: linear-gradient(rgba(0, 0, 0, 0.562), rgb(0, 0, 0.2));
+    /* background: linear-gradient(rgba(0, 0, 0, 0.562), rgb(0, 0, 0.2)); */
+    background: url('https://cafejavas.co.ug/root-assets/images/background.jpg') no-repeat ;
     background-size: cover;
-    color: #eee;
+    color: #000;
+    
 }
 
 .all-parcels hr{
@@ -27,4 +29,8 @@
 .all-parcels li p, .all-parcels li a{
     flex-basis: 20%;
 
+}
+
+.all-parcels li a{
+    color: #534186;
 }

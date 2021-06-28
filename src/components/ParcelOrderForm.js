@@ -1,4 +1,4 @@
-import React, {useState}from 'react'
+import React, {useState, useEffect}from 'react'
 import { Form } from 'react-bootstrap';
 import Axios from 'axios'
 
@@ -12,7 +12,26 @@ export default function ParcelOrderForm() {
     const [City, setCity] = useState('');
     const [Order, setOrder] = useState('');
 
+    useEffect(()=>{
+        const userID = sessionStorage.getItem('userId')
+        const getUserparcel = `https://safe-courier-server-api.herokuapp.com/users/:userId/parcels`
+        const token = sessionStorage.getItem('token')
 
+        Axios.get(getUserparcel,
+            {
+                headers:{
+                    'auth-token': token
+                }
+            },
+            {
+                params:{
+                    'userId': userID
+                }
+            }).then(res =>{
+                console.log(res.data)
+            }).catch((err)=> console.log(err))
+    },[])
+            
             const handleSubmit = (e)=>{
 
                 e.preventDefault()

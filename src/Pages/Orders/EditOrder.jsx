@@ -33,7 +33,6 @@ export default function EditOrder() {
             console.log(res)
         }).catch((err)=>console.log(err))
 
-        history.goBack()
     }
 
     const handleSubmit = (e)=>{
@@ -48,9 +47,11 @@ export default function EditOrder() {
         }).catch((err)=>console.log(err))
 
         setDestination('')
-        history.goBack()
     }
 
+    const goBackHandler = ()=>{
+        history.goBack()
+    }
 
     return (
         <div>
@@ -58,6 +59,7 @@ export default function EditOrder() {
             <h3>Edit your Order Details</h3>
             
             <button onClick={cancelOrder}>Cancel Order</button>
+            <button type="button" onClick={goBackHandler} >Go Back</button>
 
             <hr></hr>
 

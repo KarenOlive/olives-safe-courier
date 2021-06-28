@@ -13,6 +13,17 @@ export default function AdminEditOrder() {
     const token = sessionStorage.getItem('token')
     const history = useHistory()
 
+    const config = {
+        headers: {
+          'auth-token': token,
+        },
+        
+        params:{
+                'parcelId': parcelId
+        }
+        
+    };
+
 
     const ParcelPresentLocation = {
         presentLocation: location,
@@ -41,17 +52,7 @@ export default function AdminEditOrder() {
         status: "Delivered",
     };
 
-    const config = {
-        headers: {
-          'auth-token': token,
-        },
-        
-        params:{
-                'parcelId': parcelId
-        }
-        
-    };
-
+   
     //Admin 
     function statusHandlerInTransit(e) {
         e.preventDefault();
@@ -63,7 +64,6 @@ export default function AdminEditOrder() {
             console.log(res)
         }).catch((err)=> console.log(err))
 
-        history.goBack()
     }
 
     function statusHandlerDelivered(e) {
@@ -76,7 +76,6 @@ export default function AdminEditOrder() {
             console.log(res)
         }).catch((err)=> console.log(err))
 
-        history.goBack()
 
     }
 
@@ -89,8 +88,10 @@ export default function AdminEditOrder() {
                 console.log(res)
         }).catch((err)=> console.log(err))
 
-            history.goBack()
+    }
 
+    const goBackHandler = ()=>{
+        history.goBack()
     }
 
     return (
@@ -102,7 +103,9 @@ export default function AdminEditOrder() {
                     <button type="button" onClick={statusHandlerInTransit}>In-transit</button>
                     <button type="button" onClick={statusHandlerDelivered}>Delivered</button>
                     <button type="button" onClick={cancelParcelOrder} >Cancel Order</button>
+                    <button type="button" onClick={goBackHandler} >Go Back</button>
                 </div>
+                <hr></hr>
             <form style={{margin:"10px", padding:"20px"}}>
                 
                     <input type="text" placeholder="Change Present Location" required 
