@@ -82,8 +82,9 @@ export default function AdminEditOrder() {
     const cancelParcelOrder = ()=> {
 
    
-        Axios.put(baseUrl+`/${parcelId}/cancel`, 
-                    config
+        Axios.put(
+            baseUrl + `/${parcelId}/cancel`, 
+            config
         ).then(res =>{
                 console.log(res)
         }).catch((err)=> console.log(err))

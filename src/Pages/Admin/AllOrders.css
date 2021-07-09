@@ -28,7 +28,7 @@
 
 .all-parcels li p, .all-parcels li a{
     flex-basis: 20%;
-
+    flex-wrap: wrap;
 }
 
 .all-parcels li a{

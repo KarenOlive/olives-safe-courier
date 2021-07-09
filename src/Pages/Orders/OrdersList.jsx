@@ -1,12 +1,15 @@
 import React, {useEffect, useState} from 'react'
 import Axios from 'axios'
 import OrderDetails from './OrderDetails'
-
+import { useStateValue } from '../../context/contextapi/StateProvider'
+import {actionTypes} from '../../context/contextapi/reducer'
+import './Orders.css';
 
 export default function OrdersList() {
    
 
     const [parcels, setParcels] = useState([])
+    const [{update}, dispatch] = useStateValue()
 
 
     useEffect(()=>{
@@ -28,12 +31,21 @@ export default function OrdersList() {
                 console.log(res.data)
                 setParcels(res.data)
             }).catch((err)=> console.log(err))
-    },[])
+
+            return () => {
+                dispatch({
+                    type: actionTypes.SET_UPDATE,
+                    update: false
+                })
+            }
+            // eslint-disable-next-line
+    },[update])
+   
 
    //checking if the parcels array has any parcels in it if so, display them
        return parcels.length ? (
-        <div className="posts-list">
-            <ul>
+        <div>
+            <ul className="parcels-list">
                 {[...parcels].map(parcel => {
                     return ( <OrderDetails parcel={parcel} key={parcel._id} parcelId={parcel._id} /> )
                 })}

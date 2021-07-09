@@ -34,10 +34,10 @@ function Orders() {
 
             <div>
             <div className="listheader">
-                <h5>Parcel</h5>
-                <h5>Destination</h5>
-                <h5>Status</h5>
-                <h5>PresentLocation</h5>
+                <h3>Parcel</h3>
+                <h3>Destination</h3>
+                <h3>Status</h3>
+                <h3>PresentLocation</h3>
 
             </div>
             <hr></hr>

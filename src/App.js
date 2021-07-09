@@ -16,7 +16,7 @@ import EditOrder from './Pages/Orders/EditOrder';
 
 function App() {
   const {Auth} = IsAuth()
-
+  const email = sessionStorage.getItem('email')
   return (
     <div className="App">
       <Router>
@@ -29,7 +29,7 @@ function App() {
           <ProtectedRoute path="/orders" component={Orders} isAuth={Auth} />  
           <Route exact path="/adminEditOrder/:parcelId" component={AdminEditOrder} />
           <Route exact path="/editOrder/:parcelId" component={EditOrder} />
-          <ProtectedRoute exact path="/admin" component={AllOrders} isAuth={Auth} />
+          <ProtectedRoute exact path="/admin" component={AllOrders} isAuth={Auth} isAdmin={email} />
 
         </Switch>
       </Router>

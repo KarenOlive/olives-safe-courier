@@ -1,7 +1,8 @@
 import React, {useState}from 'react'
 import { Form } from 'react-bootstrap';
 import Axios from 'axios'
-
+import {useStateValue} from '../context/contextapi/StateProvider'
+import {actionTypes} from '../context/contextapi/reducer'
 export default function ParcelOrderForm() {
 
 
@@ -11,9 +12,9 @@ export default function ParcelOrderForm() {
     const [Destination, setDestination] = useState('');
     const [City, setCity] = useState('');
     const [Order, setOrder] = useState('');
+    const [{update}, dispatch] = useStateValue()
+      console.log(update);     
 
-
-            
             const handleSubmit = (e)=>{
 
                 e.preventDefault()
@@ -40,7 +41,13 @@ export default function ParcelOrderForm() {
                 }
                 ).catch((err)=> console.log(err))
 
-                
+
+                dispatch({
+                    type: actionTypes.SET_UPDATE,
+                    update: true
+                })
+
+
                 setRecipientsName('');
                 setContact('');
                 setPickupLocation('');
@@ -48,6 +55,10 @@ export default function ParcelOrderForm() {
                 setCity('')
                 setOrder('')
             }
+
+            
+
+
 
     return (
         <div>

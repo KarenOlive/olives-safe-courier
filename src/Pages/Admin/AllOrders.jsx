@@ -1,15 +1,41 @@
-import React from 'react'
-import { Parcels } from '../../context/ParcelContext'
+import React, {useState, useEffect} from 'react'
+import Axios from 'axios'
+
 import AdminOrderDetails from './AdminOrderDetails'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
+import { useStateValue } from '../../context/contextapi/StateProvider'
+import {actionTypes} from '../../context/contextapi/reducer'
 
 import './AllOrders.css'
 
 export default function AllOrders() {
-    const {parcels} = Parcels()
+    const [parcels, setParcels] = useState([])
+    const [{update}, dispatch] = useStateValue()
 
     
+
+    useEffect(()=>{
+        const token = sessionStorage.getItem('token')
+        const parcelsurl = `https://safe-courier-server-api.herokuapp.com/parcels`
+
+        Axios.get(parcelsurl, {
+            headers:{
+                'auth-token': token
+            }
+            }).then(res =>{
+                console.log(res.data.parcelOrders)
+                setParcels(res.data.parcelOrders)
+            }).catch((err)=> console.log(err))
+
+            return () => {
+                dispatch({
+                    type: actionTypes.SET_UPDATE,
+                    update: false
+                })
+            }
+                        // eslint-disable-next-line
+    },[update]) 
 
    
 

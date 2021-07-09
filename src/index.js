@@ -4,13 +4,19 @@ import './index.css';
 import App from './App';
 import AuthProvider from './context/AuthContext'
 import ParcelProvider from './context/ParcelContext';
+import reducer, {initialState} from './context/contextapi/reducer';
+import {StateProvider} from "./context/contextapi/StateProvider";
+
 ReactDOM.render(
  
-  <AuthProvider>
+ <StateProvider initialState={initialState} reducer={reducer}>
+    <AuthProvider>
     <ParcelProvider>
-     <App />
+       <App />
     </ParcelProvider>
-  </AuthProvider>,
+    </AuthProvider>
+ </StateProvider>,
+ 
      
   
   document.getElementById('root')

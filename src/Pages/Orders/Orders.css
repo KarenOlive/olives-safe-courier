@@ -59,11 +59,16 @@
 
 .listheader{
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 
-.listheader h5{
-    flex-basis: 25%;
-    flex-shrink: 1;
+.listheader h3{
+    flex-basis: 20%;
+    flex-wrap: wrap;
+}
+
+.parcels-list li p, .parcels-list li a {
+    flex-basis: 20%;
+    flex-wrap: wrap;
 }

@@ -33,6 +33,14 @@ export default function Login() {
             console.log(res)
             sessionStorage.setItem('token', res.data.token)
             login()
+
+            // const email = sessionStorage.getItem('email')
+            // if(res.data.message === "Log In successful" && email === "johndoe@mail.com"){
+            //     history.push('/admin')
+            // }
+            // else if(res.data.message === "Log In successful"){
+            //      history.push('/orders') 
+            // } 
             if(res.data.message === "Log In successful"){
                 history.push('/orders') 
             }

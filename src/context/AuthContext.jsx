@@ -1,4 +1,5 @@
-import React, {useState, useContext} from 'react'
+import React, {useState, useContext, useEffect} from 'react'
+import Axios from 'axios'
 
 const AuthContext = React.createContext()
 
@@ -16,6 +17,23 @@ export default function AuthProvider(props) {
         sessionStorage.clear()
     }
 
+    useEffect(()=>{
+
+        const auth = `https://safe-courier-server-api.herokuapp.com/auth`
+        const token = sessionStorage.getItem('token')
+
+        Axios.get(auth, {
+            headers:{
+            'auth-token': token
+        }}).then(res =>{
+            console.log(res)
+            sessionStorage.setItem('userId', res.data.userId)
+            sessionStorage.setItem('Username', res.data.Fullname)
+            sessionStorage.setItem('email', res.data.Email)
+            
+        }).catch((err)=> console.log(err))
+    },[])
+    
     return (
         
             <AuthContext.Provider value={{Auth, login, logout}}>
