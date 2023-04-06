@@ -19,7 +19,7 @@ export default function AuthProvider(props) {
 
     useEffect(()=>{
 
-        const auth = `https://safe-courier-server-api.herokuapp.com/auth`
+        const auth = `https://safe-courier-rest-api.onrender.com/auth`
         const token = sessionStorage.getItem('token')
 
         Axios.get(auth, {

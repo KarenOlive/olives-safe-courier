@@ -37,7 +37,7 @@ export default function Contact() {
                    <p>+1 232 3235 324</p> 
 
                    <h3>Email Address</h3>
-                   <p>safecorier@gmail.com</p>
+                   <p>safecourier@test.com</p>
                 </div>
             </div>
             <Footer/>

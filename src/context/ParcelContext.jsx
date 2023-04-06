@@ -1,10 +1,11 @@
 import React, {useContext, useState, useEffect} from 'react'
 import Axios from 'axios'
+import {baseUrl} from '../api/parcels';
 
 const ParcelContext = React.createContext()
 
 const token = sessionStorage.getItem('token')
-const parcelsurl = `https://safe-courier-server-api.herokuapp.com/parcels`
+const parcelsurl = `https://safe-courier-rest-api.onrender.com/parcels`
 
 
 export function Parcels(){
@@ -19,7 +20,7 @@ export default function ParcelProvider(props) {
     //get all parcels - Admin only
 
     useEffect(()=>{
-        Axios.get(parcelsurl, {
+        Axios.get(baseUrl, {
             headers:{
                 'auth-token': token
             }

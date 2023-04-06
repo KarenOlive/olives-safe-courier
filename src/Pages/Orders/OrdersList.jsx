@@ -3,6 +3,7 @@ import Axios from 'axios'
 import OrderDetails from './OrderDetails'
 import { useStateValue } from '../../context/contextapi/StateProvider'
 import {actionTypes} from '../../context/contextapi/reducer'
+import {baseUrl} from '../../api/parcels';
 import './Orders.css';
 
 export default function OrdersList() {
@@ -14,7 +15,7 @@ export default function OrdersList() {
 
     useEffect(()=>{
         const userID = sessionStorage.getItem('userId')
-        const getUserparcel = `https://safe-courier-server-api.herokuapp.com/users/:userId/parcels`
+        const getUserparcel = baseUrl+"/users/:userId/parcels"
         const token = sessionStorage.getItem('token')
 
         Axios.get(getUserparcel,

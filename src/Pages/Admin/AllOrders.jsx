@@ -6,7 +6,7 @@ import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import { useStateValue } from '../../context/contextapi/StateProvider'
 import {actionTypes} from '../../context/contextapi/reducer'
-
+import {baseUrl} from '../../api/parcels';
 import './AllOrders.css'
 
 export default function AllOrders() {
@@ -17,9 +17,8 @@ export default function AllOrders() {
 
     useEffect(()=>{
         const token = sessionStorage.getItem('token')
-        const parcelsurl = `https://safe-courier-server-api.herokuapp.com/parcels`
 
-        Axios.get(parcelsurl, {
+        Axios.get(baseUrl, {
             headers:{
                 'auth-token': token
             }

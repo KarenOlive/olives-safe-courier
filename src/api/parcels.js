@@ -1,7 +1,7 @@
 
 
 
-export const baseUrl = `https://safe-courier-server-api.herokuapp.com/parcels`
+export const baseUrl = `https://safe-courier-rest-api.onrender.com/parcels`
 
 
 

@@ -21,7 +21,7 @@ export default function Login() {
     const handleSubmit = (e)=>{
         e.preventDefault();
 
-        const url = `https://safe-courier-server-api.herokuapp.com/auth/login`
+        const url = `https://safe-courier-rest-api.onrender.com/auth/login`
 
         const userData = {
             Email,

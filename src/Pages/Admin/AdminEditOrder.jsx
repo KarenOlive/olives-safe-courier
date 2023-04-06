@@ -33,7 +33,7 @@ export default function AdminEditOrder() {
         e.preventDefault();
         
         Axios.put(
-            `https://safe-courier-server-api.herokuapp.com/parcels/${parcelId}/presentLocation`,
+            baseUrl+`/${parcelId}/presentLocation`,
           ParcelPresentLocation,
           config
         ).then(res=>{
