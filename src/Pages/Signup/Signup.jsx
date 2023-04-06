@@ -6,7 +6,6 @@ import Axios from 'axios'
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { Link } from 'react-router-dom';
-import {baseUrl} from '../../api/parcels';
 import './Signup.css';
 
 
