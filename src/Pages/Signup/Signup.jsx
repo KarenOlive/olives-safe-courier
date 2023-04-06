@@ -24,7 +24,7 @@ export default function Signup() {
 
         e.preventDefault();
 
-        const url = baseUrl+"/auth/signup"
+        const url = "https://safe-courier-rest-api.onrender.com/auth/signup"
 
         const newUser = {
             Fullname,
