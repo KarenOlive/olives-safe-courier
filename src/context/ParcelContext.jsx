@@ -5,7 +5,7 @@ import {baseUrl} from '../api/parcels';
 const ParcelContext = React.createContext()
 
 const token = sessionStorage.getItem('token')
-const parcelsurl = `https://safe-courier-rest-api.onrender.com/parcels`
+// const parcelsurl = `https://safe-courier-rest-api.onrender.com/parcels`
 
 
 export function Parcels(){
